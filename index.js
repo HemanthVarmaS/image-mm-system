@@ -26,7 +26,7 @@ const options = {
 
 const connectWithRetry = () => {
     console.log('MongoDB connection with retry')
-    mongoose.connect("mongodb://mongo:27017/docker-node-mongo", options).then(() => {
+    mongoose.connect("mongodb://mongo:27017/imms-db", options).then(() => {
         console.log('MongoDB is connected')
     }).catch(err => {
         console.log(err)
@@ -148,7 +148,7 @@ app.post('/item/auth', (req, res) => {
     var pass = req.body.prop;
     global.found;
     global.found = 0;
-    if (uname == "guest" && pass == "guest") {
+    if ((uname == "guest" && pass == "guest") || (uname == 'admin' && pass == 'admin')) {
         return res.redirect('/loggedIn');
     } else {
         var f = 0;
