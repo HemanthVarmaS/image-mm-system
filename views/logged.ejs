@@ -11,8 +11,7 @@
     <title>Image Metadata Management System</title>
     <style>
         .btn-submit {
-            background: rgba(57, 136, 255, 0.5);
-            display: inline;
+			background: rgba(57, 136, 255, 0.5);
 			outline: none;
 			width: 100px;
 			padding-top: 0px;
@@ -56,9 +55,9 @@
             <input type="text" name="name2" style="width: 80px;">
             
             <label for="name">Value</label>
-            <button class="btn-submit" type="submit">Search</button>
+            <input type="text" name="prop" style="width: 80px;">
             
-            <input type="submit" value="Search">
+            <button class="btn-submit" type="submit">Search</button>
         </form>
       </div>
 
@@ -80,7 +79,7 @@
                   </div>
               </div>
               <br>
-              <button class="btn-submit" type="submit">Upload</button>
+              <button type="submit" class="btn-submit">Upload</button>
           </form>
           <br> <h6>Preview of previous upload:</h6>
           <img src="<%= typeof file != 'undefined' ? file : '' %>" class="responsive-img" style="max-height: 80px;">
