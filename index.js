@@ -227,8 +227,11 @@ app.post('/descfind', (req, res) => {
             let i = 0;
             docs.forEach((doc) => {
                 let obj = JSON.parse(JSON.stringify(doc));
-
-            })
+                if(obj[image][ImageDescription]===description) {
+                    result.push(String(ob['path']).substr(7));
+                }
+            });
+            res.render('list',{items:result,layout:false});
         }
     });
 });
